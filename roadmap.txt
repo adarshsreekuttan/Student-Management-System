@@ -1,0 +1,438 @@
+# School Management System - Development Roadmap
+
+## Phase 0: Project Planning
+
+### Decide Stack
+
+Frontend:
+
+* React + Vite
+* Tailwind CSS
+* React Router
+* Axios
+* React Hook Form
+* Yup
+* React Toastify
+
+Backend:
+
+* Django
+* Django REST Framework
+* Simple JWT
+
+Database:
+
+* PostgreSQL
+
+Deployment:
+
+* Vercel (Frontend)
+* Render (Backend + PostgreSQL)
+
+---
+
+## Phase 1: Initial Project Setup
+
+### Backend Setup
+
+Create:
+
+* Django Project
+* Students App
+
+Install:
+
+* Django
+* Django REST Framework
+* SimpleJWT
+* Cors Headers
+* PostgreSQL Driver
+
+Configure:
+
+* DRF
+* JWT Authentication
+* CORS
+
+Verify:
+
+* Server Runs Successfully
+
+---
+
+### Frontend Setup
+
+Create React App using Vite
+
+Install:
+
+* React Router
+* Axios
+* Tailwind CSS
+* React Hook Form
+* Yup
+* React Toastify
+
+Create Folder Structure:
+
+src/
+├── pages
+├── components
+├── services
+├── hooks
+├── routes
+├── layouts
+└── utils
+
+Verify:
+
+* React App Runs Successfully
+
+---
+
+## Phase 2: Database Design
+
+Create Student Model
+
+Fields:
+
+* id
+* name
+* email
+* phone
+* grade
+* date_of_birth
+* address
+* created_at
+* updated_at
+
+Run:
+
+* makemigrations
+* migrate
+
+Create Admin Registration
+
+Verify:
+
+* Data Can Be Added Through Django Admin
+
+---
+
+## Phase 3: Authentication System
+
+Create:
+
+POST /api/login
+
+Implement:
+
+* JWT Login
+* Token Generation
+
+Frontend:
+
+* Login Page
+* Login Form Validation
+
+After Login:
+
+* Save Token
+* Redirect To Dashboard
+
+Create:
+
+* Protected Routes
+
+Verify:
+
+* Dashboard Cannot Be Accessed Without Login
+
+---
+
+## Phase 4: Student CRUD APIs
+
+Build APIs
+
+GET /api/students
+
+GET /api/students/{id}
+
+POST /api/students
+
+PUT /api/students/{id}
+
+DELETE /api/students/{id}
+
+Verify Using:
+
+* Postman
+
+Do NOT Start Frontend Until APIs Work Properly
+
+---
+
+## Phase 5: Frontend Layout
+
+Create:
+
+* Navbar
+* Sidebar (Optional)
+* Dashboard Layout
+
+Create Pages:
+
+* Login
+* Dashboard
+* Student List
+* Add Student
+* Edit Student
+
+Create Routing
+
+Verify Navigation Works
+
+---
+
+## Phase 6: Student List Page
+
+Build Table
+
+Display:
+
+* Name
+* Email
+* Phone
+* Grade
+* Actions
+
+Connect API
+
+Implement:
+
+* Fetch Students
+* Loading State
+* Empty State
+
+Verify:
+
+* Students Display Correctly
+
+---
+
+## Phase 7: Add Student Page
+
+Create Reusable StudentForm Component
+
+Add Validation:
+
+* Required Fields
+* Email Validation
+* Phone Validation
+
+Connect:
+
+POST /api/students
+
+Add:
+
+* Success Toast
+* Error Toast
+
+Verify:
+
+* Student Added Successfully
+
+---
+
+## Phase 8: Edit Student Page
+
+Reuse StudentForm
+
+Load Existing Student Data
+
+Connect:
+
+GET /api/students/{id}
+
+PUT /api/students/{id}
+
+Verify:
+
+* Student Updates Correctly
+
+---
+
+## Phase 9: Delete Student
+
+Add Delete Button
+
+Add Confirmation Dialog
+
+Connect:
+
+DELETE /api/students/{id}
+
+Add Success Toast
+
+Verify:
+
+* Student Removed Correctly
+
+---
+
+## Phase 10: Professional Features
+
+Search Students
+
+Search By:
+
+* Name
+* Email
+
+Pagination
+
+10 Students Per Page
+
+Loading Spinner
+
+Toast Notifications
+
+Error Handling
+
+Responsive Mobile Design
+
+Verify Everything Works
+
+---
+
+## Phase 11: Dashboard Improvements
+
+Show:
+
+* Total Students
+* Recently Added Students
+* Logged In User
+
+Optional:
+
+* Student Count By Grade
+
+Verify Dashboard Looks Professional
+
+---
+
+## Phase 12: Code Cleanup
+
+Create:
+
+services/api.js
+
+Use:
+
+* Axios Instance
+* Centralized API Calls
+
+Remove:
+
+* Duplicate Code
+
+Create:
+
+* Reusable Components
+
+Check:
+
+* Folder Organization
+
+---
+
+## Phase 13: Testing
+
+Test:
+
+Authentication
+
+Student Creation
+
+Student Update
+
+Student Delete
+
+Search
+
+Pagination
+
+Logout
+
+Mobile Responsiveness
+
+Check For:
+
+* Console Errors
+* API Errors
+
+---
+
+## Phase 14: Deployment
+
+Backend:
+
+* Deploy To Render
+
+Database:
+
+* PostgreSQL On Render
+
+Frontend:
+
+* Deploy To Vercel
+
+Update Environment Variables
+
+Verify:
+
+* Frontend Connects To Backend
+
+---
+
+## Phase 15: Documentation
+
+Create README.md
+
+Include:
+
+Project Overview
+
+Features
+
+Tech Stack
+
+Installation Steps
+
+API Endpoints
+
+Environment Variables
+
+Deployment Links
+
+Screenshots
+
+GitHub Repository Link
+
+Live Demo Link
+
+---
+
+## Phase 16: Extra Features (Bonus Points)
+
+If Time Remains:
+
+* Dark Mode
+* Export Students To CSV
+* Student Profile Page
+* Dashboard Charts
+* Student Photo Upload
+* Activity Logs
+
+These are bonus features only after everything else is complete.
