@@ -107,6 +107,14 @@ https://student-management-system-6y87.onrender.com/
 
 ---
 
+### Demo Credentials
+
+Username: adarshsree
+
+Password: myapp123
+
+---
+
 ## Setup Instructions
 
 ### Clone Repository
