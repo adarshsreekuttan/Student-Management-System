@@ -7,7 +7,7 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=15)
-    grade = models.PositiveIntegerField()
+    grade = models.CharField(max_length=10)
     date_of_birth = models.DateField()
     address = models.TextField()
 

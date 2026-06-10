@@ -90,7 +90,7 @@ function StudentList() {
           <SearchInput
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search by name, email, or grade level..."
+            placeholder="Search by name, email, or phone"
           />
         </div>
 
