@@ -40,7 +40,7 @@ api.interceptors.response.use(
         }
 
         const response = await axios.post(
-          "http://127.0.0.1:8000/api/token/refresh/",
+          "https://student-management-system-6y87.onrender.com/api/token/refresh/",
           {
             refresh: refreshToken,
           }

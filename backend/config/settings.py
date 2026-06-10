@@ -85,20 +85,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 import os
 import dj_database_url
 
-if os.environ.get("DATABASE_URL"):
-    DATABASES = {
-        "default": dj_database_url.parse(
-            os.environ.get("DATABASE_URL")
-        )
-    }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
+import dj_database_url
 
+DATABASES = {
+    'default': dj_database_url.parse(
+        'postgresql://student_management_system_postregsql_user:Ty4u1g9wd0sgdZolgLeDED9ZAvSjgfpE@dpg-d8knf1m47okc73a37f2g-a.oregon-postgres.render.com/student_management_system_postregsql'
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
