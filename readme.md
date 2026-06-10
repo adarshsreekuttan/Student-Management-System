@@ -1,40 +1,19 @@
-# School Management System
+# School Management System – Student Management Module
 
 ## Overview
 
-A full-stack Student Management System developed using React and Django REST Framework. The application provides secure authentication and complete student record management through a modern, responsive user interface.
+A full-stack Student Management System developed as part of the White Fox Media Python Full Stack Developer Assessment.
 
-## Features
+The application allows administrators to:
 
-### Authentication
-
-* JWT-based Login
-* Protected Routes
-* Token-based API Authentication
-
-### Student Management
-
+* Login using JWT Authentication
 * View Students
-* Add Student
-* Edit Student
-* Delete Student
+* Add Students
+* Edit Students
+* Delete Students
 * Search Students
 
-### Validation
-
-* Name validation
-* Email validation
-* Indian phone number validation
-* Grade selection validation
-* Address validation
-
-### UI/UX
-
-* Responsive Design
-* Modern Dashboard
-* Reusable Components
-* Loading States
-* Mobile-Friendly Layout
+The project is built using React for the frontend and Django REST Framework for the backend.
 
 ---
 
@@ -43,7 +22,7 @@ A full-stack Student Management System developed using React and Django REST Fra
 ### Frontend
 
 * React
-* React Router DOM
+* React Router
 * Axios
 * Tailwind CSS
 
@@ -52,58 +31,94 @@ A full-stack Student Management System developed using React and Django REST Fra
 * Python
 * Django
 * Django REST Framework
-* Simple JWT
+* JWT Authentication (Simple JWT)
 
 ### Database
 
-* SQLite (Development)
+* SQLite
+
+### Deployment
+
+* Frontend: Vercel
+* Backend: Render
+
+---
+
+## Features
+
+### Authentication
+
+* JWT Login
+* Access Token
+* Refresh Token
+* Protected Routes
+
+### Student Management
+
+* View Student List
+* Add Student
+* Edit Student
+* Delete Student
+* Search Students
+
+### Validation
+
+* Student Name Validation
+* Email Validation
+* Mobile Number Validation
+* Address Validation
+* Grade Selection Validation
+
+### Responsive Design
+
+* Mobile Friendly
+* Tablet Friendly
+* Desktop Friendly
 
 ---
 
 ## API Endpoints
 
-### Authentication
+### Login
 
-POST /api/login
+POST /api/login/
 
 ### Students
 
-GET /api/students
+GET /api/students/
 
-GET /api/students/{id}
+POST /api/students/
 
-POST /api/students
+PUT /api/students/{id}/
 
-PUT /api/students/{id}
-
-DELETE /api/students/{id}
+DELETE /api/students/{id}/
 
 ---
 
-## Project Structure
+## Live Demo
 
-backend/
+Frontend:
 
-* Django Project
-* Student APIs
-* Authentication
-* Database Models
+https://student-management-system-nu-two.vercel.app/
 
-frontend/
+Backend:
 
-* React Application
-* Pages
-* Components
-* Services
-* Protected Routes
+https://student-management-system-6y87.onrender.com/
 
 ---
 
-## Installation
+## Setup Instructions
+
+### Clone Repository
+
+git clone https://github.com/adarshsreekuttan/Student-Management-System.git
+
+cd Student-Management-System
+
+---
 
 ### Backend Setup
 
-```bash
 cd backend
 
 python -m venv venv
@@ -114,47 +129,52 @@ pip install -r requirements.txt
 
 python manage.py migrate
 
+python manage.py createsuperuser
+
 python manage.py runserver
-```
+
+---
 
 ### Frontend Setup
 
-```bash
 cd frontend
 
 npm install
 
 npm run dev
-```
 
 ---
 
-## Demo Credentials
+## Project Structure
 
-Username: admin
+Student-Management-System/
 
-Password: admin123
+├── backend/
 
-(Replace with your actual demo credentials)
+│ ├── config/
 
----
+│ ├── students/
 
-## Live Demo
+│ ├── manage.py
 
-Frontend:
-(Add deployed frontend URL)
+│ └── requirements.txt
 
-Backend:
-(Add deployed backend URL)
+│
 
----
+├── frontend/
 
-## Screenshots
+│ ├── src/
 
-(Add screenshots after deployment)
+│ └── package.json
+
+│
+
+└── README.md
 
 ---
 
 ## Author
 
 Adarsh Sreekuttan
+
+Python Full Stack Developer
