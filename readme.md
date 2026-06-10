@@ -109,7 +109,7 @@ https://student-management-system-6y87.onrender.com/
 
 ### Demo Credentials
 
-Username: adarshsree
+Username: user1234
 
 Password: myapp123
 
