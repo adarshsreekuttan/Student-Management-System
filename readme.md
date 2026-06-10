@@ -35,7 +35,7 @@ The project is built using React for the frontend and Django REST Framework for 
 
 ### Database
 
-* SQLite
+* PostgreSQL
 
 ### Deployment
 
