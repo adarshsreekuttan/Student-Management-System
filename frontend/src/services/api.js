@@ -7,12 +7,16 @@ const api = axios.create({
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("accessToken");
 
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
+    if (
+      token &&
+      !config.url?.includes("login/") &&
+      !config.url?.includes("token/")
+    ) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
 
-  return config;
-});
+    return config;
+  });
 
 api.interceptors.response.use(
   (response) => response,
@@ -20,7 +24,6 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    // SAFETY CHECK: If the 401 error comes from the login endpoint, bypass the refresh loop
     if (originalRequest.url.includes("login/")) {
       return Promise.reject(error);
     }
@@ -34,7 +37,6 @@ api.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem("refreshToken");
 
-        // If there's no refresh token to begin with, clear out and bail immediately
         if (!refreshToken) {
           throw new Error("No refresh token found");
         }
@@ -57,7 +59,6 @@ api.interceptors.response.use(
       } catch (refreshError) {
         localStorage.clear();
         
-        // Only redirect to login if we aren't already sitting on the login page
         if (window.location.pathname !== "/") {
           window.location.href = "/";
         }

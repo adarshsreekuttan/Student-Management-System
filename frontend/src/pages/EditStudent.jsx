@@ -39,7 +39,6 @@ function EditStudent() {
     }
   };
 
-  // 1. Premium Loading Skeleton State
   if (isLoading) {
     return (
       <Layout>
@@ -55,7 +54,6 @@ function EditStudent() {
     );
   }
 
-  // 2. Clear Error Fallback State
   if (hasError) {
     return (
       <Layout>
@@ -78,12 +76,10 @@ function EditStudent() {
     );
   }
 
-  // 3. Main Operational Profile Render Frame
   return (
     <Layout>
       <div className="mx-auto max-w-2xl [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         
-        {/* Modern Contextual Back Button */}
         <div className="mb-6">
           <button
             onClick={() => navigate("/students")}
@@ -102,7 +98,6 @@ function EditStudent() {
           </button>
         </div>
 
-        {/* Section Heading Titles */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
             Edit Student Record
@@ -112,7 +107,6 @@ function EditStudent() {
           </p>
         </div>
 
-        {/* Content Form Shell */}
         <div className="rounded-2xl border border-slate-100 bg-white shadow-sm">
           <StudentForm
             initialData={student}

@@ -2,16 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function StudentTable({ students = [], onDelete }) {
-  // Shared structural styling definitions
   const thTheme = "px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-slate-500";
   const tdTheme = "px-6 py-4 text-sm text-slate-600 whitespace-nowrap";
 
   return (
     <div className="w-full rounded-2xl border border-slate-200/60 bg-white shadow-sm overflow-hidden">
-      {/* Horizontal Scroll Area for Perfect Mobile UX */}
       <div className="w-full overflow-x-auto scrollbar-thin">
         <table className="w-full min-w-[800px] border-collapse text-left">
-          {/* Table Header */}
           <thead className="bg-slate-50/70 border-b border-slate-200/50">
             <tr>
               <th className={thTheme}>Student Info</th>
@@ -22,7 +19,6 @@ function StudentTable({ students = [], onDelete }) {
             </tr>
           </thead>
 
-          {/* Table Body Content tracks */}
           <tbody className="divide-y divide-slate-100 bg-white">
             {students.length > 0 ? (
               students.map((student) => (
@@ -30,7 +26,6 @@ function StudentTable({ students = [], onDelete }) {
                   key={student.id}
                   className="group transition-colors duration-150 hover:bg-slate-50/60"
                 >
-                  {/* Student Info with Avatar Badge Mockup */}
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center gap-3">
                       <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 font-semibold text-blue-600 border border-blue-100/50">
@@ -54,7 +49,6 @@ function StudentTable({ students = [], onDelete }) {
                     </span>
                   </td>
 
-                  {/* Actions Column (Aligned Right for Clean SaaS Layout) */}
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex items-center justify-end gap-2">
                       <Link
@@ -75,7 +69,6 @@ function StudentTable({ students = [], onDelete }) {
                 </tr>
               ))
             ) : (
-              /* Beautiful SaaS Default Empty State Condition */
               <tr>
                 <td colSpan="5" className="px-6 py-16 text-center">
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-slate-400">

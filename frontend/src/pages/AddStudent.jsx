@@ -24,7 +24,6 @@ function AddStudent() {
     <Layout>
       <div className="mx-auto max-w-2xl">
         
-        {/* Contextual Top Utility Bar */}
         <div className="mb-6 flex items-center justify-between">
           <button
             onClick={() => navigate("/students")}
@@ -43,7 +42,6 @@ function AddStudent() {
           </button>
         </div>
 
-        {/* Page Heading Section */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
             Add New Student
@@ -53,7 +51,6 @@ function AddStudent() {
           </p>
         </div>
 
-        {/* Premium Error Alert Notification Block */}
         {errorMessage && (
           <div className="mb-6 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50/50 p-4 animate-fade-in">
             <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-600">
@@ -68,7 +65,6 @@ function AddStudent() {
           </div>
         )}
 
-        {/* Main Content Area */}
         <div className="rounded-2xl border border-slate-100 bg-white shadow-sm">
           <StudentForm onSubmit={handleSubmit} />
         </div>

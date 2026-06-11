@@ -18,7 +18,6 @@ function Dashboard() {
       const rawStudents = response.data || [];
       setStudentCount(rawStudents.length);
       
-      // Extract the 5 most recent registrations on the frontend
       const sliced = rawStudents.slice(-5).reverse();
       setRecentStudents(sliced);
     } catch (error) {
@@ -34,7 +33,6 @@ function Dashboard() {
 
   return (
     <Layout>
-      {/* Structural Header Context */}
       <div className="mb-8 border-b border-slate-100 pb-5">
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           Dashboard
@@ -44,7 +42,6 @@ function Dashboard() {
         </p>
       </div>
 
-      {/* Metrics Cards Grid Layout */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {isLoading ? (
           <div className="h-[128px] w-full animate-pulse rounded-2xl border border-slate-200/60 bg-slate-50" />
@@ -56,10 +53,8 @@ function Dashboard() {
         <DashboardCard title="System Status" value="Online" />
       </div>
 
-      {/* Recent Registrations Mobile-Optimized Section */}
       <div className="mt-10 rounded-2xl border border-slate-200/60 bg-white shadow-sm overflow-hidden">
         
-        {/* Feed Header with Responsive Layout */}
         <div className="flex flex-col gap-4 border-b border-slate-100 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-base font-semibold text-slate-900">
@@ -87,7 +82,6 @@ function Dashboard() {
           </button>
         </div>
 
-        {/* Dynamic List Render Track with Hidden Browser Scrollbars */}
         <div className="divide-y divide-slate-50 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {isLoading ? (
             [1, 2, 3].map((skeletonKey) => (
@@ -108,7 +102,6 @@ function Dashboard() {
                 key={student.id} 
                 className="flex items-center justify-between gap-4 px-6 py-4 transition-colors duration-150 hover:bg-slate-50/40"
               >
-                {/* Profile Identity & Text Information Cluster */}
                 <div className="flex items-center gap-3.5 min-w-0 flex-1">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 font-bold text-blue-600 border border-blue-100/30 text-xs">
                     {student.name ? student.name.charAt(0).toUpperCase() : "S"}
@@ -123,7 +116,6 @@ function Dashboard() {
                   </div>
                 </div>
 
-                {/* Mobile-Safe Grade Placement Badge */}
                 <div className="shrink-0">
                   <span className="inline-flex items-center rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 ring-1 ring-inset ring-slate-500/10 whitespace-nowrap">
                     {student.grade}

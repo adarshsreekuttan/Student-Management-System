@@ -11,7 +11,6 @@ function Navbar() {
     navigate("/");
   };
 
-  // Helper function to dynamically style active links
   const getLinkClass = (path) => {
     const isActive = location.pathname === path;
     return `relative text-sm font-medium transition-colors duration-200 py-1.5 px-3 rounded-lg ${
@@ -26,7 +25,6 @@ function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           
-          {/* Brand Logo Area */}
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 shadow-md shadow-blue-500/20">
               <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -39,7 +37,6 @@ function Navbar() {
             </span>
           </div>
 
-          {/* Desktop Navigation Links */}
           <div className="hidden items-center gap-2 md:flex">
             <Link to="/dashboard" className={getLinkClass("/dashboard")}>
               Dashboard
@@ -49,7 +46,6 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Right Action Items (Desktop) */}
           <div className="hidden items-center gap-4 md:flex">
             <div className="h-4 w-px bg-slate-200" /> {/* Divider */}
             
@@ -64,7 +60,6 @@ function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -83,7 +78,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Slide-down */}
       <div className={`md:hidden overflow-hidden transition-all duration-300 max-h-0 ${isOpen ? "max-h-60 border-b border-slate-200 bg-white" : ""}`}>
         <div className="space-y-1.5 px-4 pb-4 pt-2">
           <Link

@@ -15,7 +15,6 @@ function Login() {
   };
 
   const handleSubmit = async (e) => {
-    // CRITICAL: Force the browser to block default page reloads under ALL conditions
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -32,7 +31,6 @@ function Login() {
         password: password 
       });
 
-      // Verification check to make sure the token actually exists before moving forward
       if (response && response.data && response.data.access) {
         localStorage.setItem("accessToken", response.data.access);
         localStorage.setItem("refreshToken", response.data.refresh);
@@ -41,10 +39,8 @@ function Login() {
         throw new Error("Malformed token response structure");
       }
     } catch (error) {
-      // Defensive logging to find out exactly what your network service is throwing
       console.error("Caught login exception safely on frontend:", error);
       
-      // Permanently lock the error string to state
       setAuthError("The username or password you entered is incorrect. Please check your credentials.");
     } finally {
       setIsSubmitting(false);
@@ -56,16 +52,13 @@ function Login() {
   return (
     <div className="relative min-h-screen bg-slate-50 flex items-center justify-center p-4 sm:p-8 font-sans antialiased overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       
-      {/* Decorative Ambient Canvas Blobs */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-[-20%] left-[-10%] h-[600px] w-[600px] rounded-full bg-blue-500/5 blur-[120px]" />
         <div className="absolute bottom-[-20%] right-[-10%] h-[600px] w-[600px] rounded-full bg-indigo-500/5 blur-[120px]" />
       </div>
 
-      {/* Main Authentication Card Structure Container */}
       <div className="relative w-full max-w-[440px] bg-white rounded-2xl border border-slate-200/50 p-8 sm:p-10 shadow-xl shadow-slate-100/40">
         
-        {/* Brand System Logo Cluster */}
         <div className="flex items-center gap-2.5 mb-8">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 shadow-sm shadow-blue-500/20">
             <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -76,7 +69,6 @@ function Login() {
           <span className="text-sm font-semibold tracking-tight text-slate-900">EduPulse Admin</span>
         </div>
 
-        {/* Framing Header Titles */}
         <div className="mb-6">
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
             Welcome back
@@ -86,7 +78,6 @@ function Login() {
           </p>
         </div>
 
-        {/* Inline Localized Validation Error State Alert */}
         {authError && (
           <div className="mb-5 flex items-start gap-2.5 rounded-xl border border-red-100 bg-red-50/60 p-3.5 transition-all duration-300">
             <div className="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-red-100 text-red-600 mt-0.5">
@@ -98,10 +89,8 @@ function Login() {
           </div>
         )}
 
-        {/* Form Elements */}
         <form onSubmit={handleSubmit} className="space-y-4">
           
-          {/* Username Input Track */}
           <div className="space-y-1.5">
             <label htmlFor="username" className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
               Username
@@ -118,7 +107,6 @@ function Login() {
             />
           </div>
 
-          {/* Password Input Track */}
           <div className="space-y-1.5">
             <label htmlFor="password" className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
               Password
@@ -135,7 +123,6 @@ function Login() {
             />
           </div>
 
-          {/* Primary Submit Button Action Block */}
           <button
             type="submit"
             disabled={isSubmitting}

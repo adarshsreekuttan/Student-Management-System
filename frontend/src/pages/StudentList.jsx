@@ -44,17 +44,14 @@ function StudentList() {
   };
 
   const filteredStudents = students.filter((student) => {
-    // If no search query exists, show the student immediately
     if (!searchQuery) return true;
 
     const query = searchQuery.toLowerCase().trim();
 
-    // Explicitly check for null/undefined fields and convert them to safe fallback strings
     const studentName = student.name ? String(student.name).toLowerCase() : "";
     const studentEmail = student.email ? String(student.email).toLowerCase() : "";
     const studentPhone = student.phone ? String(student.phone) : "";
 
-    // Perform the search comparison safely
     return (
       studentName.includes(query) ||
       studentEmail.includes(query) ||
@@ -66,7 +63,6 @@ function StudentList() {
     <Layout>
       <div className="[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         
-        {/* Main Header Row Action Stack */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8 border-b border-slate-100 pb-6">
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
@@ -85,7 +81,6 @@ function StudentList() {
           </Link>
         </div>
 
-        {/* Refactored Search Component Section */}
         <div className="mb-6">
           <SearchInput
             value={searchQuery}
@@ -94,7 +89,6 @@ function StudentList() {
           />
         </div>
 
-        {/* Main Data Render Track Container */}
         <div className="rounded-2xl border border-slate-200/60 bg-white shadow-sm overflow-hidden">
           {isLoading ? (
             <div className="p-6 space-y-4 animate-pulse">
@@ -111,7 +105,6 @@ function StudentList() {
           )}
         </div>
 
-        {/* Premium State-driven SaaS Confirmation Modal Backdrop Overlay */}
         {deleteTargetId && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm animate-fade-in">
             <div className="w-full max-w-md rounded-2xl border border-slate-100 bg-white p-6 shadow-2xl scale-[1.01] transition-transform duration-200">
